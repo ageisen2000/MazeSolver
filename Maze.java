@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package maze;
 
 public class Maze {
@@ -28,6 +23,7 @@ public class Maze {
         this.setHeight(tempHeight);
         this.setWidth(tempWidth);
         maze = new char[getHeight()][getWidth()];
+        this.initMaze();
     }
     public char[][] getMaze(){
         return maze;
@@ -39,10 +35,26 @@ public class Maze {
         return this.width;
     }
     private void setHeight(int height){
-        this.height = height;
+        if(height > MAX_HEIGHT){
+            System.out.println("Height exceeded max, defaulting to " + MAX_HEIGHT);
+            this.height = MAX_HEIGHT;
+        }else if (height < 4){
+            System.out.println("Height is below minimum, defaulting to 4");
+            this.height = 4;
+        }else{
+            this.height = height;
+        }
     }
     private void setWidth(int width){
-        this.width = width;
+        if(width > this.MAX_WIDTH){
+            System.out.println("Width exceeds maximum defaulting to " 
+                    + MAX_WIDTH);
+            this.width = MAX_WIDTH;
+        }else if(width < 4){
+            System.out.println("Width is below minimum, defaulting to 4");
+        }else{
+            this.width = width;
+        }
     }
     private void initMaze(){
         this.buildBorder();
