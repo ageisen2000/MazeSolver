@@ -3,9 +3,10 @@ package maze;
 public class MazeDriver {
 
     public static void main(String[] args) {
-        // TODO code application logic here
-        Maze maze = new Maze();
-        System.out.println("Test:");
-        maze.printMaze();
+        //@TODO code application logic here
+
+        MazeSolver m = new MazeSolver();
+        Maze q = new Maze(10,10);
+        MazeSolver n = new MazeSolver(q);
     }
 }
