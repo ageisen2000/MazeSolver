@@ -73,13 +73,18 @@ public class Maze {
         }
         
         //make sure the square directly right of openingL is available
+        /*************
+         * Debugging *
+         *************
         this.maze[this.openingL][0] = 'Q';
         this.maze[this.openingL][1] = 'Q';
+        this.maze[this.openingR][this.width-1] = 'Z';
+        this.maze[this.openingR][this.width-2] = 'Z';
+        */
         //make sure square directly left of openingR is available
         System.out.println("L: "+openingL);
         System.out.println("R: "+openingR);
-        this.maze[this.openingR][this.width-1] = 'Z';
-        this.maze[this.openingR][this.width-2] = 'Z';
+
     }
     
     private void buildBorder(){
